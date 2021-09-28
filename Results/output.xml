@@ -1,0 +1,311 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 4.1.1 (Python 3.9.6 on win32)" generated="20210928 10:38:19.714" rpa="false" schemaversion="2">
+<suite id="s1" name="Search" source="C:\VSCode\SearchChallenge\Tests\Search.robot">
+<test id="s1-t1" name="Valid Login">
+<kw name="Given Open the Web Site http://github.com" library="Resource_UI" sourcename="Open the Web Site ${URL}">
+<kw name="Open Browser" library="Selenium2Library">
+<arg>${URL}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20210928 10:38:19.997" level="INFO">Opening browser 'firefox' to base url 'http://github.com'.</msg>
+<msg timestamp="20210928 10:38:20.001" level="INFO">Firefox driver log is always forced to to: C:\VSCode\SearchChallenge\geckodriver-1.log</msg>
+<status status="PASS" starttime="20210928 10:38:19.996" endtime="20210928 10:38:31.447"/>
+</kw>
+<status status="PASS" starttime="20210928 10:38:19.996" endtime="20210928 10:38:31.448"/>
+</kw>
+<kw name="When I Search for &quot;react&quot;" library="Github" sourcename="I Search for &quot;${TEXT}&quot;">
+<kw name="Input text and press ENTER" library="Resource_UI">
+<arg>${SEARCH_BOX}</arg>
+<arg>react</arg>
+<kw name="Wait Until Page Contains Element" library="Selenium2Library">
+<arg>${LOCATOR}</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" starttime="20210928 10:38:31.449" endtime="20210928 10:38:31.461"/>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<arg>${LOCATOR}</arg>
+<arg>${TEXT}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20210928 10:38:31.462" level="INFO">Typing text 'react' into text field 'xpath=//input[@name='q']'.</msg>
+<status status="PASS" starttime="20210928 10:38:31.461" endtime="20210928 10:38:31.493"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>1</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20210928 10:38:32.498" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20210928 10:38:31.493" endtime="20210928 10:38:32.498"/>
+</kw>
+<kw name="Press Keys" library="Selenium2Library">
+<arg>${LOCATOR}</arg>
+<arg>ENTER</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<msg timestamp="20210928 10:38:32.498" level="INFO">Sending key(s) ('ENTER',) to xpath=//input[@name='q'] element.</msg>
+<msg timestamp="20210928 10:38:32.783" level="INFO">Pressing special key ENTER to element.</msg>
+<msg timestamp="20210928 10:38:32.783" level="INFO">Releasing special key ENTER.</msg>
+<status status="PASS" starttime="20210928 10:38:32.498" endtime="20210928 10:38:32.796"/>
+</kw>
+<status status="PASS" starttime="20210928 10:38:31.448" endtime="20210928 10:38:32.796"/>
+</kw>
+<status status="PASS" starttime="20210928 10:38:31.448" endtime="20210928 10:38:32.796"/>
+</kw>
+<kw name="And I advance search" library="Github">
+<kw name="Focus and click element" library="Resource_UI">
+<arg>${ADVANCED_SEARCH}</arg>
+<kw name="Wait Until Page Contains Element" library="Selenium2Library">
+<arg>${LOCATOR}</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" starttime="20210928 10:38:32.797" endtime="20210928 10:38:33.659"/>
+</kw>
+<kw name="Set Focus To Element" library="Selenium2Library">
+<arg>${LOCATOR}</arg>
+<doc>Sets the focus to the element identified by ``locator``.</doc>
+<status status="PASS" starttime="20210928 10:38:33.660" endtime="20210928 10:38:33.665"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>0.5</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20210928 10:38:34.169" level="INFO">Slept 500 milliseconds</msg>
+<status status="PASS" starttime="20210928 10:38:33.665" endtime="20210928 10:38:34.169"/>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<arg>${LOCATOR}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20210928 10:38:34.169" level="INFO">Clicking element 'xpath=//a[text()='Advanced search' and contains(@href,'Repositories')]'.</msg>
+<status status="PASS" starttime="20210928 10:38:34.169" endtime="20210928 10:38:34.780"/>
+</kw>
+<status status="PASS" starttime="20210928 10:38:32.797" endtime="20210928 10:38:34.780"/>
+</kw>
+<status status="PASS" starttime="20210928 10:38:32.797" endtime="20210928 10:38:34.780"/>
+</kw>
+<kw name="&quot;JavaScript&quot; as written language" library="Github" sourcename="&quot;${LANGUAGE}&quot; as written language">
+<kw name="Select From List By Value" library="Selenium2Library">
+<arg>${WRITTEN_LANGUAGE}</arg>
+<arg>${LANGUAGE}</arg>
+<doc>Selects options from selection list ``locator`` by ``values``.</doc>
+<msg timestamp="20210928 10:38:34.781" level="INFO">Selecting options from selection list 'id:search_language' by value JavaScript.</msg>
+<status status="PASS" starttime="20210928 10:38:34.781" endtime="20210928 10:38:35.019"/>
+</kw>
+<status status="PASS" starttime="20210928 10:38:34.780" endtime="20210928 10:38:35.020"/>
+</kw>
+<kw name="With this many stars &gt;45" library="Github" sourcename="With this many stars ${STARS}">
+<kw name="Input text and press TAB" library="Resource_UI">
+<arg>${SEARCH_STARS}</arg>
+<arg>${STARS}</arg>
+<kw name="Wait Until Page Contains Element" library="Selenium2Library">
+<arg>${LOCATOR}</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" starttime="20210928 10:38:35.021" endtime="20210928 10:38:35.025"/>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<arg>${LOCATOR}</arg>
+<arg>${TEXT}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20210928 10:38:35.026" level="INFO">Typing text '&gt;45' into text field 'id:search_stars'.</msg>
+<status status="PASS" starttime="20210928 10:38:35.026" endtime="20210928 10:38:35.039"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>1</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20210928 10:38:36.047" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20210928 10:38:35.039" endtime="20210928 10:38:36.047"/>
+</kw>
+<kw name="Press Keys" library="Selenium2Library">
+<arg>${LOCATOR}</arg>
+<arg>TAB</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<msg timestamp="20210928 10:38:36.047" level="INFO">Sending key(s) ('TAB',) to id:search_stars element.</msg>
+<msg timestamp="20210928 10:38:36.329" level="INFO">Pressing special key TAB to element.</msg>
+<msg timestamp="20210928 10:38:36.329" level="INFO">Releasing special key TAB.</msg>
+<status status="PASS" starttime="20210928 10:38:36.047" endtime="20210928 10:38:36.340"/>
+</kw>
+<status status="PASS" starttime="20210928 10:38:35.020" endtime="20210928 10:38:36.341"/>
+</kw>
+<status status="PASS" starttime="20210928 10:38:35.020" endtime="20210928 10:38:36.341"/>
+</kw>
+<kw name="With this many FOLLOWERS &gt;50" library="Github" sourcename="With this many FOLLOWERS ${FOLLOWERS}">
+<kw name="Input text and press TAB" library="Resource_UI">
+<arg>${SEARCH_FOLLOWERS}</arg>
+<arg>${FOLLOWERS}</arg>
+<kw name="Wait Until Page Contains Element" library="Selenium2Library">
+<arg>${LOCATOR}</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" starttime="20210928 10:38:36.343" endtime="20210928 10:38:36.347"/>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<arg>${LOCATOR}</arg>
+<arg>${TEXT}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20210928 10:38:36.347" level="INFO">Typing text '&gt;50' into text field 'id:search_followers'.</msg>
+<status status="PASS" starttime="20210928 10:38:36.347" endtime="20210928 10:38:36.363"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>1</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20210928 10:38:37.379" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20210928 10:38:36.363" endtime="20210928 10:38:37.379"/>
+</kw>
+<kw name="Press Keys" library="Selenium2Library">
+<arg>${LOCATOR}</arg>
+<arg>TAB</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<msg timestamp="20210928 10:38:37.380" level="INFO">Sending key(s) ('TAB',) to id:search_followers element.</msg>
+<msg timestamp="20210928 10:38:37.663" level="INFO">Pressing special key TAB to element.</msg>
+<msg timestamp="20210928 10:38:37.663" level="INFO">Releasing special key TAB.</msg>
+<status status="PASS" starttime="20210928 10:38:37.380" endtime="20210928 10:38:37.670"/>
+</kw>
+<status status="PASS" starttime="20210928 10:38:36.342" endtime="20210928 10:38:37.670"/>
+</kw>
+<status status="PASS" starttime="20210928 10:38:36.341" endtime="20210928 10:38:37.670"/>
+</kw>
+<kw name="With this License bsl-1.0" library="Github" sourcename="With this License ${LICENSE}">
+<kw name="Select From List By Value" library="Selenium2Library">
+<arg>${SEARCH_LICENSE}</arg>
+<arg>${LICENSE}</arg>
+<doc>Selects options from selection list ``locator`` by ``values``.</doc>
+<msg timestamp="20210928 10:38:37.671" level="INFO">Selecting options from selection list 'id:search_license' by value bsl-1.0.</msg>
+<status status="PASS" starttime="20210928 10:38:37.671" endtime="20210928 10:38:37.892"/>
+</kw>
+<status status="PASS" starttime="20210928 10:38:37.671" endtime="20210928 10:38:37.892"/>
+</kw>
+<kw name="And I Click on Search" library="Github">
+<kw name="Focus and click element" library="Resource_UI">
+<arg>${SEARCH_BUTTON}</arg>
+<kw name="Wait Until Page Contains Element" library="Selenium2Library">
+<arg>${LOCATOR}</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" starttime="20210928 10:38:37.893" endtime="20210928 10:38:37.895"/>
+</kw>
+<kw name="Set Focus To Element" library="Selenium2Library">
+<arg>${LOCATOR}</arg>
+<doc>Sets the focus to the element identified by ``locator``.</doc>
+<status status="PASS" starttime="20210928 10:38:37.895" endtime="20210928 10:38:37.900"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>0.5</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20210928 10:38:38.402" level="INFO">Slept 500 milliseconds</msg>
+<status status="PASS" starttime="20210928 10:38:37.901" endtime="20210928 10:38:38.402"/>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<arg>${LOCATOR}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20210928 10:38:38.402" level="INFO">Clicking element 'xpath://button[contains(text(),'Search')]'.</msg>
+<status status="PASS" starttime="20210928 10:38:38.402" endtime="20210928 10:38:39.133"/>
+</kw>
+<status status="PASS" starttime="20210928 10:38:37.893" endtime="20210928 10:38:39.133"/>
+</kw>
+<status status="PASS" starttime="20210928 10:38:37.892" endtime="20210928 10:38:39.133"/>
+</kw>
+<kw name="Then Only the repositorie mvoloskov/decider is returned" library="Github" sourcename="Only the repositorie ${REPO} is returned">
+<kw name="Get Element Count" library="Selenium2Library">
+<var>${ELEMENTS}</var>
+<arg>${REPOSITORIE_ITEMS}</arg>
+<doc>Returns the number of elements matching ``locator``.</doc>
+<msg timestamp="20210928 10:38:39.138" level="INFO">${ELEMENTS} = 1</msg>
+<status status="PASS" starttime="20210928 10:38:39.134" endtime="20210928 10:38:39.138"/>
+</kw>
+<kw name="Should Be True" library="BuiltIn">
+<arg>${ELEMENTS}==1</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="PASS" starttime="20210928 10:38:39.138" endtime="20210928 10:38:39.138"/>
+</kw>
+<kw name="Element Text Should Be" library="Selenium2Library">
+<arg>${FIRST_REPO}</arg>
+<arg>mvoloskov/decider</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<msg timestamp="20210928 10:38:39.139" level="INFO">Verifying element 'xpath://ul[@class='repo-list']/li[1]//a' contains exact text 'mvoloskov/decider'.</msg>
+<status status="PASS" starttime="20210928 10:38:39.138" endtime="20210928 10:38:39.154"/>
+</kw>
+<kw name="Focus and click element" library="Resource_UI">
+<arg>${FIRST_REPO}</arg>
+<kw name="Wait Until Page Contains Element" library="Selenium2Library">
+<arg>${LOCATOR}</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" starttime="20210928 10:38:39.154" endtime="20210928 10:38:39.158"/>
+</kw>
+<kw name="Set Focus To Element" library="Selenium2Library">
+<arg>${LOCATOR}</arg>
+<doc>Sets the focus to the element identified by ``locator``.</doc>
+<status status="PASS" starttime="20210928 10:38:39.159" endtime="20210928 10:38:39.163"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>0.5</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20210928 10:38:39.670" level="INFO">Slept 500 milliseconds</msg>
+<status status="PASS" starttime="20210928 10:38:39.163" endtime="20210928 10:38:39.670"/>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<arg>${LOCATOR}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20210928 10:38:39.670" level="INFO">Clicking element 'xpath://ul[@class='repo-list']/li[1]//a'.</msg>
+<status status="PASS" starttime="20210928 10:38:39.670" endtime="20210928 10:38:40.867"/>
+</kw>
+<status status="PASS" starttime="20210928 10:38:39.154" endtime="20210928 10:38:40.867"/>
+</kw>
+<kw name="Get Text from ${README}" library="Resource_UI" sourcename="Get Text from ${LOCATOR}">
+<var>${Text}</var>
+<kw name="Get Text" library="Selenium2Library">
+<var>${TEXT}</var>
+<arg>${LOCATOR}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20210928 10:38:41.089" level="INFO">${TEXT} = 🤔 Decider
+Apply CSS to React components conditionally, like a boss.
+className={ decide(styles, {
+    header: true,
+    mobile: props.isMobile,
+    narrow: parseInt(props.width) &lt; 400,
+    hidden: (pro...</msg>
+<status status="PASS" starttime="20210928 10:38:40.868" endtime="20210928 10:38:41.090"/>
+</kw>
+<msg timestamp="20210928 10:38:41.090" level="INFO">${Text} = 🤔 Decider
+Apply CSS to React components conditionally, like a boss.
+className={ decide(styles, {
+    header: true,
+    mobile: props.isMobile,
+    narrow: parseInt(props.width) &lt; 400,
+    hidden: (pro...</msg>
+<status status="PASS" starttime="20210928 10:38:40.867" endtime="20210928 10:38:41.090"/>
+</kw>
+<kw name="Get Substring" library="String">
+<var>${Text}</var>
+<arg>${Text}</arg>
+<arg>0</arg>
+<arg>300</arg>
+<doc>Returns a substring from ``start`` index to ``end`` index.</doc>
+<msg timestamp="20210928 10:38:41.090" level="INFO">${Text} = 🤔 Decider
+Apply CSS to React components conditionally, like a boss.
+className={ decide(styles, {
+    header: true,
+    mobile: props.isMobile,
+    narrow: parseInt(props.width) &lt; 400,
+    hidden: (pro...</msg>
+<status status="PASS" starttime="20210928 10:38:41.090" endtime="20210928 10:38:41.090"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${Text}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20210928 10:38:41.090" endtime="20210928 10:38:41.091"/>
+</kw>
+<status status="PASS" starttime="20210928 10:38:39.133" endtime="20210928 10:38:41.091"/>
+</kw>
+<kw name="Close Browser" library="Selenium2Library" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20210928 10:38:41.092" endtime="20210928 10:38:41.566"/>
+</kw>
+<status status="PASS" starttime="20210928 10:38:19.995" endtime="20210928 10:38:41.566"/>
+</test>
+<doc>Github Search Challenge</doc>
+<status status="PASS" starttime="20210928 10:38:19.716" endtime="20210928 10:38:41.567"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="Search">Search</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
